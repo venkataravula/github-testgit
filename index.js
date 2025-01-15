@@ -21,4 +21,4 @@
  });
  }
 
-makeCommit(100)
+makeCommit(100);
