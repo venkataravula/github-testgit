@@ -1,0 +1,25 @@
+{
+  "name": "github-bot",
+  "version": "1.0.0",
+  "description": "get job by march 21",
+  "homepage": "https://github.com/ravulaprasad/github-bot#readme",
+  "bugs": {
+    "url": "https://github.com/ravulaprasad/github-bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravulaprasad/github-bot.git"
+  },
+  "license": "ISC",
+  "author": "VENKATA RAVULA",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jsonfile": "^6.1.0",
+    "moment": "^2.30.1",
+    "simple-git": "^3.27.0"
+  }
+}
