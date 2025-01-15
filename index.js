@@ -1,7 +1,6 @@
 const jsonfile = require('jsonfile');
 const moment = require('moment');
 const simpleGit = require('simple-git');
-const random = require('random');
 
 const FILE_PATH = './data.json';
 
@@ -11,18 +10,18 @@ const makeCommit = n => {
         return simpleGit().push();
     }
 
-    // Generate random integers for weeks and days
-    const x = Math.floor(Math.random() * 55); // Random integer between 0 and 54
-const y = Math.floor(Math.random() * 7);  // Random integer between 0 and 6
+    // Generate a random year between 2017 and 2022
+    const year = Math.floor(Math.random() * (2023 - 2017)) + 2017;
 
+    // Generate a random day of the year
+    const dayOfYear = Math.floor(Math.random() * 365);
 
-    // Calculate a randomized date in the past year
+    // Calculate a random date for the generated year and day of year
     const DATE = moment()
-        .subtract(1, 'y') // Go back 1 year
-        .add(1, 'd')      // Add 1 day (to avoid edge cases)
-        .add(x, 'w')      // Add random weeks
-        .add(y, 'd')      // Add random days
-        .format();        // Format the date for Git
+        .year(year)
+        .startOf('year')
+        .add(dayOfYear, 'days')
+        .format(); // Format the date for Git
 
     const data = { date: DATE };
 
@@ -37,5 +36,5 @@ const y = Math.floor(Math.random() * 7);  // Random integer between 0 and 6
     });
 };
 
-// Start the commit process with 100 commits
-makeCommit(2000);
+// Start the commit process with 5000 commits
+makeCommit(5000);
