@@ -4,13 +4,17 @@
 
  const FILE_PATH = './data.json';
 
- const DATE = moment().subtract(1,'y').add(1,'d').format();
+ const makeCommit = (x,y) => {
+    const DATE = moment().subtract(1,'y').add(1,'d').
+                add(x,'w').add(y,'d').format();
 
- const data = {
+    const data = {
     date: DATE
- }
+    }
 
- jsonfile.writeFile(FILE_PATH, data,()=>{
+    jsonfile.writeFile(FILE_PATH, data,()=>{
     simpleGit().add([FILE_PATH]).commit(DATE,{'--date': DATE}).push();
  });
+ }
 
+makeCommit(3,3)
