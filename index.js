@@ -4,7 +4,7 @@
 
  const FILE_PATH = './data.json';
 
- const DATE = moment().subtract(1,'d').format();
+ const DATE = moment().subtract(1,'y').add(1,'d').format();
 
  const data = {
     date: DATE
