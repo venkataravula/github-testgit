@@ -38,4 +38,4 @@ const y = Math.floor(Math.random() * 7);  // Random integer between 0 and 6
 };
 
 // Start the commit process with 100 commits
-makeCommit(100);
+makeCommit(2000);
